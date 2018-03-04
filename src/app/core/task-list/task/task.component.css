@@ -1,0 +1,14 @@
+.completed {
+    background: lightgray;
+    opacity: 0.45;
+}
+.task {
+    width: 600px;
+}
+.panel-status {
+    width: 24px;
+    float: right;
+}
+.mat-expansion-panel-header-title {
+    width: 90%;
+}

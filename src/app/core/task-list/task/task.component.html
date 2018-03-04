@@ -1,0 +1,13 @@
+<mat-expansion-panel class="task" hideToggle="true">
+  <mat-expansion-panel-header [class.completed]="task.status" class="task-title">
+    <mat-panel-title>
+      {{task.title}}
+    </mat-panel-title>
+    <mat-panel-description *ngIf="!task.hasChildren" class="panel-status">
+        <i class="material-icons" *ngIf="!task.status">clear</i>
+        <i class="material-icons" *ngIf="task.status">done</i>
+      <!-- <mat-checkbox [checked]="task.status"></mat-checkbox> -->
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <p>{{task.details}}</p>
+</mat-expansion-panel>
