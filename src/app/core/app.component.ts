@@ -1,3 +1,4 @@
+import { DataProviderService } from './../shared/services/data-provider.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -9,19 +10,16 @@ export class AppComponent {
   title = 'Pricing Manager';
   mainMenu = [];
   selectedMenu: number;
+  subtasks: any[];
 
-  constructor () {
-    
-    this.mainMenu = [
-      { id: 1, name: 'Prelim Processing' },
-      { id: 2, name: 'Transactions Processing' },
-      { id: 3, name: 'Investing Fund Pricing Pre-Processed' },
-      { id: 4, name: 'Investing Fund Prices Sign-Off' },
-      { id: 5, name: 'Fund Hierarchy Sign-Off' }
-    ];
+  constructor (private dataProvider: DataProviderService) {
+
+    this.mainMenu = this.dataProvider.getMainMenu();
+    this.subtasks = this.dataProvider.getSubsForMenu(1);
   }
   log(x) {
     this.selectedMenu = x;
+    this.subtasks = this.dataProvider.getSubsForMenu(x + 1);
     console.log('clicked me ' + x);
   }
 }

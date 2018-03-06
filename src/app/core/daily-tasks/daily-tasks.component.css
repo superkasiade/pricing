@@ -1,0 +1,12 @@
+.group-container {
+    display: flex;
+    flex-direction: row;
+    /* width: 20%; */
+    padding: 8px;
+}
+/* .menu-button {
+    height: 36px;
+}
+.mat-button-toggle-group {
+    height: 36px;
+} */

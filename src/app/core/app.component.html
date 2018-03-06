@@ -1,25 +1,13 @@
 <ng-container class="main-screen">
   <app-header></app-header>
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav opened disableClose mode="side"  class="sidenav">
-    <app-date-selector></app-date-selector>
-  </mat-sidenav>
-  <mat-sidenav-content class="main-content">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav opened disableClose mode="side" class="sidenav">
+      <app-date-selector></app-date-selector>
+    </mat-sidenav>
 
-<mat-button-toggle-group #buttonGroup value="button 0">
-    <mat-button-toggle value="button {{i}}" *ngFor="let menu of mainMenu; let i = index;" (click)="log(i)" class="menu-button">{{menu.name}}</mat-button-toggle>
-  </mat-button-toggle-group>
+    <mat-sidenav-content class="main-content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
 
-  <app-task-list class="group-container" [id]="selectedMenu + 1"></app-task-list>
-    <!-- <mat-tab-group #tabGroup>
-      <mat-tab *ngFor="let menu of mainMenu; let i = index">
-        <ng-template mat-tab-label>{{menu.name}}</ng-template>
-          <app-task-list class="group-container"></app-task-list>-
-      </mat-tab>
-
-    </mat-tab-group>
-     -->
-  </mat-sidenav-content>
-
-</mat-sidenav-container>
+  </mat-sidenav-container>
 </ng-container>

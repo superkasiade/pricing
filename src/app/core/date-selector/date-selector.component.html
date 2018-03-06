@@ -5,8 +5,11 @@
 </mat-list> -->
 
 <mat-menu #appMenu="matMenu" *ngIf="false">
-  <button mat-menu-item *ngFor="let menu of mainMenu">{{menu.name}}</button>
+  <button mat-menu-item 
+  *ngFor="let menu of mainMenu">{{menu.name}}</button>
 </mat-menu>
 
-<button mat-button *ngFor="let date of dateRange">{{date.day | date:'fullDate'}}
+<button mat-button 
+  [routerLink]="['/tasklist',date.day | date: 'yyyyMMdd']" 
+  *ngFor="let date of dateRange">{{date.day | date:'fullDate'}}
 </button>

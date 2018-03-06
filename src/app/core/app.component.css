@@ -17,21 +17,9 @@
     display: flex;
     flex-direction: column;
     height: 800px;
-    width: 1600px;
-}
-.group-container {
-    display: flex;
-    flex-direction: row;
-    width: 20%;
-    padding: 8px;
+    width: 1620px;
 }
 div.mat-expansion-panel-content:not(.mat-expanded) {
     height: 0px !important;
     visibility: hidden !important;
-}
-.menu-button {
-    height: 36px;
-}
-.mat-button-toggle-group {
-    height: 36px;
 }

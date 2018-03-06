@@ -1,5 +1,5 @@
-<mat-accordion>
-  <ng-container *ngFor="let task of subTasks">
+<mat-accordion multi="false">
+  <ng-container *ngFor="let task of list">
     <app-task [task]="task"></app-task>
   </ng-container>
 </mat-accordion>

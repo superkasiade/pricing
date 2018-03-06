@@ -1,16 +1,16 @@
 <mat-toolbar color="secondary">  
-    <mat-toolbar-row>
-      <img class="logo" src="../../assets/images/logo-transparent.png" width="48px" height="48px"/>
-      <span class="app-name">Pricing Manager</span>
-    </mat-toolbar-row>
-  
-    <mat-toolbar-row>
-      <button mat-button class="header-menu">Tasklist</button>
-      <mat-form-field class="datepicker" *ngIf="false">
-          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-        <button mat-button class="header-menu">Request Report</button>
-    </mat-toolbar-row>
-  </mat-toolbar>
+  <mat-toolbar-row>
+    <img class="logo" src="../../assets/images/logo-transparent.png" width="48px" height="48px"/>
+    <span class="app-name">Pricing Manager</span>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <button mat-button class="header-menu" routerLink="/tasklist">Tasklist</button>
+    <mat-form-field class="datepicker" *ngIf="false">
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <button mat-button class="header-menu" routerLink="/report">Request Report</button>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,3 +1,4 @@
+import { DataProviderService } from './../../../shared/services/data-provider.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -8,10 +9,18 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TaskComponent implements OnInit {
 
   @Input('task') task;
+  title: string;
+  hideToggle: boolean;
+  isDisabled: boolean;
+  children: any[];
 
-  constructor() { }
+  constructor(private dataProvider: DataProviderService) { }
 
   ngOnInit() {
+    this.children = this.dataProvider.getTasksForSub(this.task.id);
+    this.title =  this.task.hasChildren ? 'Expand' : 'Complete';
+    this.hideToggle = this.task.hasChildren ? false : true;
+    this.isDisabled = this.task.status;
   }
 
 }

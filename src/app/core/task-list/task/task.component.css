@@ -3,7 +3,7 @@
     opacity: 0.45;
 }
 .task {
-    width: 600px;
+    width: 800px;
 }
 .panel-status {
     width: 24px;
@@ -11,4 +11,7 @@
 }
 .mat-expansion-panel-header-title {
     width: 90%;
+}
+.shrunk .mat-expansion-panel {
+    width: 750px;
 }

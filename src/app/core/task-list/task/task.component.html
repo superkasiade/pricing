@@ -1,13 +1,17 @@
-<mat-expansion-panel class="task" hideToggle="true">
+<mat-expansion-panel class="task" hideToggle="true" title="{{title}}">
   <mat-expansion-panel-header [class.completed]="task.status" class="task-title">
     <mat-panel-title>
       {{task.title}}
     </mat-panel-title>
-    <mat-panel-description *ngIf="!task.hasChildren" class="panel-status">
-        <i class="material-icons" *ngIf="!task.status">clear</i>
-        <i class="material-icons" *ngIf="task.status">done</i>
+    <mat-panel-description class="panel-status">
+        <!-- <i class="material-icons" *ngIf="!task.hasChildren && !task.status">clear</i> -->
+        <i class="material-icons" *ngIf="!task.hasChildren && task.status">done</i>
+        <i class="material-icons" *ngIf="task.hasChildren">keyboard_arrow_down</i>
       <!-- <mat-checkbox [checked]="task.status"></mat-checkbox> -->
     </mat-panel-description>
   </mat-expansion-panel-header>
-  <p>{{task.details}}</p>
+  <!-- <ng-template> -->
+  <p *ngIf="!task.hasChildren">{{task.details}}</p>
+    <app-task-list *ngIf="task.hasChildren" [list]=children class="shrunk"></app-task-list>
+  <!-- </ng-template> -->
 </mat-expansion-panel>

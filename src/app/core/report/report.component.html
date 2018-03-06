@@ -1,0 +1,10 @@
+<div class='report-container'>
+  <h3>
+    Configure report filter
+  </h3>
+  <mat-form-field class="datepicker" *ngIf="true">
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
