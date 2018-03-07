@@ -46,7 +46,11 @@ export class DataProviderService {
     return this.mainMenu;
   }
   getSubsForMenu(menu_id: number) {
-    return this.subs.filter(item => item.parent_id === menu_id);
+    console.log('in data provider');
+    console.log(menu_id);
+    const newcol = this.subs.filter(item => item.parent_id === menu_id);
+    console.log(newcol);
+    return newcol;
   }
 
   getTasksForSub(sub_id: number) {

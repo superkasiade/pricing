@@ -17,7 +17,7 @@ export class DailyTasksComponent {
     let menu: number;
     this.route.params.subscribe(params => menu = params.menu_id);
     this.mainMenu = this.dataProvider.getMainMenu();
-    this.subtasks = this.dataProvider.getSubsForMenu(menu ? menu : 1);
+    // this.subtasks = this.dataProvider.getSubsForMenu(menu ? menu : 1);
   }
 
   reloadMenu(index: number) {

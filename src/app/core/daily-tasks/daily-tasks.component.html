@@ -1,12 +1,13 @@
 <mat-button-toggle-group #buttonGroup value="button 0">
-  <mat-button-toggle 
+  <mat-button-toggle [routerLink]="['./menu', i + 1]"
     value="button {{i}}" 
     *ngFor="let menu of mainMenu; let i = index;" 
     (click)="reloadMenu(i)" 
     class="menu-button">{{menu.name}}</mat-button-toggle>
 </mat-button-toggle-group>
 
-<app-task-list class="group-container" [list]="subtasks"></app-task-list>
+<router-outlet></router-outlet>
+<!-- <app-task-list class="group-container" [list]="subtasks"></app-task-list> -->
 
 <!-- <mat-tab-group #tabGroup>
 <mat-tab *ngFor="let menu of mainMenu; let i = index">

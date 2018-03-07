@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { DataProviderService } from './../../shared/services/data-provider.service';
 import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 
@@ -12,6 +13,7 @@ export class TaskListComponent implements OnInit {
   @Input() list: any[];
   taskList = [];
   subTasks = [];
+  // list = [];
 
   // tasks = [
   //   { id: 1, sub_id: 3, title: 'Transaction Status - none below Fin Calc', status: 0, details: 'some random info 2'},
@@ -43,12 +45,17 @@ export class TaskListComponent implements OnInit {
   //   { id: 10, parent_id: 3, title: 'Fund Pricing Team', hasChildren: true, status: 0, completed_when: null, completed_by: 'Z441'},
   // ];
 
-  constructor(private dataProvider: DataProviderService) { }
+  constructor(private dataProvider: DataProviderService,
+  private route: ActivatedRoute) { }
 
   ngOnInit() {
-    // this.subTasks = this.dataProvider.getSubsForMenu(this.id);
+    this.route.params.subscribe(params => {
 
-    // console.log(this.subTasks);
+      this.list = this.dataProvider.getSubsForMenu(+params.menu_id);
+      console.log(this.list);
+      console.log(params);
+    });
+
     // console.log(this.id);
     // this.taskList =
   }

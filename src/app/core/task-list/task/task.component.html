@@ -12,6 +12,6 @@
   </mat-expansion-panel-header>
   <!-- <ng-template> -->
   <p *ngIf="!task.hasChildren">{{task.details}}</p>
-    <app-task-list *ngIf="task.hasChildren" [list]=children class="shrunk"></app-task-list>
+    <!-- <app-task-list *ngIf="task.hasChildren" [id]=task.id class="shrunk"></app-task-list> -->
   <!-- </ng-template> -->
 </mat-expansion-panel>
